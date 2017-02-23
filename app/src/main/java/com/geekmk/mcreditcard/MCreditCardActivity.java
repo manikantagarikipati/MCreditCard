@@ -16,6 +16,11 @@ public class MCreditCardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mcredit_card);
+        initViews();
+    }
+
+    //initialize all views needed.
+    private void initViews() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
@@ -47,6 +52,9 @@ public class MCreditCardActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_refresh:
                 Toast.makeText(this,"Refresh card contents",Toast.LENGTH_LONG).show();
+                return false;
+            case android.R.id.home:
+                finish();
                 return false;
             default:
                 return super.onOptionsItemSelected(item);
