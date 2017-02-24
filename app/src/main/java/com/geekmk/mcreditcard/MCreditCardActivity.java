@@ -1,5 +1,7 @@
 package com.geekmk.mcreditcard;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,21 +10,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-public class MCreditCardActivity extends AppCompatActivity {
+public class MCreditCardActivity extends AppCompatActivity{
+
+    private MCard mCard;
+
+    private AnimatorSet mSetRightOut;
+    private AnimatorSet mSetLeftIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mcredit_card);
         initViews();
+        loadAnimations();
+        changeCameraDistance();
     }
 
     //initialize all views needed.
     private void initViews() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mCard = (MCard) findViewById(R.id.mcard);
     }
 
     @Override
@@ -51,7 +60,7 @@ public class MCreditCardActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.action_refresh:
-                Toast.makeText(this,"Refresh card contents",Toast.LENGTH_LONG).show();
+                performClearAnimation();
                 return false;
             case android.R.id.home:
                 finish();
@@ -61,5 +70,25 @@ public class MCreditCardActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    private void performClearAnimation() {
+        mSetRightOut.setTarget(mCard);
+        mSetLeftIn.setTarget(mCard);
+        mSetRightOut.start();
+        mSetLeftIn.start();
+    }
+
+    private void changeCameraDistance() {
+        int distance = 8000;
+        float scale = getResources().getDisplayMetrics().density * distance;
+        mCard.setCameraDistance(scale);
+    }
+
+    private void loadAnimations() {
+        mSetRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.out_animation);
+
+        mSetLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.in_animation);
+        mSetLeftIn.setStartDelay(1000);
     }
 }
