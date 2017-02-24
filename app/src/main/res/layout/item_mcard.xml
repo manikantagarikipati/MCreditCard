@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_mcard"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="true"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardBackgroundColor="@color/default_card_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_height">
+        <RelativeLayout
+            android:layout_margin="@dimen/max_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginTop="@dimen/min_margin"
+                android:text="@string/default_card_number"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/secondary_text_size"
+                android:id="@+id/tv_card_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_marginBottom="@dimen/max_margin"
+                android:layout_above="@+id/tv_card_holder_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_month_year"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:maxLines="1"
+                    android:text="@string/default_card_month_year"
+                    android:textColor="@color/default_card_text_color"
+                    android:layout_toLeftOf="@+id/tv_card_cvv"
+                    android:layout_toStartOf="@id/tv_card_cvv"
+                    android:textSize="@dimen/medium_text_size"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_card_cvv"
+                    android:maxLines="1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/default_card_text_color"
+                    android:text="@string/default_card_cvv"
+                    android:textSize="@dimen/medium_text_size"
+                    tools:text="Cvv Code ???? " />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_card_holder_name"
+                android:textAllCaps="true"
+                android:layout_alignParentBottom="true"
+                android:textSize="@dimen/medium_text_size"
+                android:text="@string/default_card_holder"
+                android:textColor="@color/default_card_text_color" />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</merge>

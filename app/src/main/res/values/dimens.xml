@@ -9,5 +9,10 @@
     <dimen name="card_height">212dp</dimen>
     <dimen name="card_elevation">12dp</dimen>
     <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="secondary_text_size">18sp</dimen>
+    <dimen name="min_margin">8dp</dimen>
+    <dimen name="max_margin">24dp</dimen>
+    <dimen name="medium_text_size">14sp</dimen>
+
 
 </resources>

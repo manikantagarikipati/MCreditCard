@@ -10,4 +10,5 @@
     <color name="black">#191919</color>
     <color name="grey">#7f7f7f</color>
     <color name="default_card_color">#243027</color>
+    <color name="default_card_text_color">#7f7f7f</color>
 </resources>

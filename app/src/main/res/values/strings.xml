@@ -3,4 +3,9 @@
 
     <string name="screen_name">Submit Credit Card</string>
     <string name="action_refresh">Refresh</string>
+    <string name="card_type">Type Of Card</string>
+    <string name="default_card_month_year">MM/YY</string>
+    <string name="default_card_cvv">CVV CODE</string>
+    <string name="default_card_holder">Card Holder</string>
+    <string name="default_card_number">XXXX XXXX XXXX XXXX</string>
 </resources>
