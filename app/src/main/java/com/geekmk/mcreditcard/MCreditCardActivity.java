@@ -15,8 +15,9 @@ public class MCreditCardActivity extends AppCompatActivity{
 
     private MCard mCard;
 
-    private AnimatorSet mSetRightOut;
-    private AnimatorSet mSetLeftIn;
+    private AnimatorSet inSet;
+    private AnimatorSet outSet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,6 @@ public class MCreditCardActivity extends AppCompatActivity{
         setContentView(R.layout.activity_mcredit_card);
         initViews();
         loadAnimations();
-        changeCameraDistance();
     }
 
     //initialize all views needed.
@@ -73,22 +73,16 @@ public class MCreditCardActivity extends AppCompatActivity{
     }
 
     private void performClearAnimation() {
-        mSetRightOut.setTarget(mCard);
-        mSetLeftIn.setTarget(mCard);
-        mSetRightOut.start();
-        mSetLeftIn.start();
-    }
+        outSet.setTarget(mCard);
+        outSet.start();
 
-    private void changeCameraDistance() {
-        int distance = 8000;
-        float scale = getResources().getDisplayMetrics().density * distance;
-        mCard.setCameraDistance(scale);
+        inSet.setTarget(mCard);
+        inSet.start();
+
     }
 
     private void loadAnimations() {
-        mSetRightOut = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.out_animation);
-
-        mSetLeftIn = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.in_animation);
-        mSetLeftIn.setStartDelay(1000);
+        inSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.card_flip_in);
+        outSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.card_flip_out);
     }
 }
