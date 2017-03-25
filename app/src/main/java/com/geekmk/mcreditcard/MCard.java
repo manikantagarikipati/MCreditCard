@@ -5,6 +5,9 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import static android.R.attr.name;
 
 /**
  * Created by Mani on 23/02/17.
@@ -12,6 +15,15 @@ import android.widget.RelativeLayout;
  */
 
 public class MCard extends RelativeLayout{
+
+    private TextView tvCardNo;
+
+    private TextView tvDate;
+
+    private TextView tvName;
+
+    private TextView tvCvv;
+
 
     public MCard(Context context) {
         super(context);
@@ -35,5 +47,38 @@ public class MCard extends RelativeLayout{
 
         View view = inflater.inflate(R.layout.item_mcard, this);
 
+        tvCardNo = (TextView) view.findViewById(R.id.tv_card_number);
+
+        tvDate = (TextView) view.findViewById(R.id.tv_month_year);
+
+        tvName = (TextView) view.findViewById(R.id.tv_card_holder_name);
+
+        tvCvv = (TextView) view.findViewById(R.id.tv_card_cvv);
+
     }
+
+
+    public void setCardNumber(String cardNumber) {
+        tvCardNo.setText(cardNumber);
+    }
+
+    public void setDate(String date) {
+        tvDate.setText(date);
+    }
+
+    public void setName(String name) {
+        tvName.setText(name);
+    }
+
+    public void setCvv(String cvv) {
+        tvCvv.setText(cvv);
+    }
+
+    public void reset(){
+        tvCardNo.setText(getResources().getString(R.string.default_card_number));
+        tvDate.setText(getResources().getString(R.string.default_card_month_year));
+        tvName.setText(getResources().getString(R.string.default_card_holder));
+        tvCvv.setText(getResources().getString(R.string.default_card_cvv));
+    }
+
 }

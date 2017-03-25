@@ -8,4 +8,8 @@
     <string name="default_card_cvv">CVV CODE</string>
     <string name="default_card_holder">Card Holder</string>
     <string name="default_card_number">XXXX XXXX XXXX XXXX</string>
+    <string name="enter_cvv">CVV CODE</string>
+    <string name="enter_name">CARD HOLDER</string>
+    <string name="number">16-DIGIT CARD NUMBER</string>
+    <string name="date">EXPIRED DATE</string>
 </resources>

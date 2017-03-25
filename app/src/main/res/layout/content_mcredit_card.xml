@@ -12,19 +12,21 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.geekmk.mcreditcard.MCreditCardActivity"
     tools:showIn="@layout/activity_mcredit_card">
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.geekmk.mcreditcard.MCard
                 android:id="@+id/mcard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-        </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
+            <android.support.v4.view.ViewPager
+                android:layout_marginTop="@dimen/min_margin"
+                android:id="@+id/vp_credit_card_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
 
 
 </RelativeLayout>
